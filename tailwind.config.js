@@ -5,9 +5,14 @@ module.exports = {
     extend: {
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
+        'DynaPuff': ['DynaPuff', 'cursive'],
+        'Limelight': ['Limelight', 'cursive'],
+        'JetBrains': ['JetBrains Mono', 'monospace'],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-text-stroke'),
+  ],
 }
 
