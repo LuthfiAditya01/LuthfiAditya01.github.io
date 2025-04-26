@@ -8,6 +8,7 @@ module.exports = {
         'DynaPuff': ['DynaPuff', 'cursive'],
         'Limelight': ['Limelight', 'cursive'],
         'JetBrains': ['JetBrains Mono', 'monospace'],
+        'PermanentMarker': ['Permanent Marker', 'cursive'],
       },
     },
   },
