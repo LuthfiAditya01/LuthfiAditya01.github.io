@@ -1,181 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Luthfi Aditya</title>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script> -->
-  <script src="https://kit.fontawesome.com/07cbcbbb26.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="src/output.css">
-  <link rel="shortcut icon" href="img/letter-l.png" type="image/x-icon">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Limelight&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Luthfi Aditya</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script> -->
+    <script src="https://kit.fontawesome.com/07cbcbbb26.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="src/output.css" />
+    <link rel="shortcut icon" href="img/letter-l.png" type="image/x-icon" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Limelight&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
 
-  <style>
-    .card {
-      transition: flex-grow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .card:hover {
-      flex-grow: 7;
-    }
-    .card-content > * {
-      transition: all 0.35s ease;
-    }
-    .card:not(:hover) .title {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    .card:hover .background {
-      filter: brightness(1);
-    }
-    .card .background {
-      filter: brightness(0.4);
-      transition: all 0.35s ease;
-    }
-    .card:hover .profile-image {
-      border-color: rgb(110, 252, 205);
-    }
-    .card:hover .profile-image svg {
-      stroke: rgb(110, 252, 205);
-    }
-  </style>
-</head>
+    <style>
+      .card {
+        transition: flex-grow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .card:hover {
+        flex-grow: 7;
+      }
+      .card-content > * {
+        transition: all 0.35s ease;
+      }
+      .card:not(:hover) .title {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+      .card:hover .background {
+        filter: brightness(1);
+      }
+      .card .background {
+        filter: brightness(0.4);
+        transition: all 0.35s ease;
+      }
+      .card:hover .profile-image {
+        border-color: rgb(110, 252, 205);
+      }
+      .card:hover .profile-image svg {
+        stroke: rgb(110, 252, 205);
+      }
+    </style>
+  </head>
 
-<body class="font-JetBrains   bg-gradient-to-r from-sky-50 to-sky-200">
-  <!-- Header -->
-  <header data-aos="fade-down" class="bg-white shadow-md fixed w-full top-0 z-50">
-    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-      <div class="text-2xl font-bold text-sky-600">Luthfi Aditya</div>
-    </nav>
-  </header>
+  <body class="font-JetBrains bg-gradient-to-r from-sky-50 to-sky-200">
+    <!-- Header -->
+    <header data-aos="fade-down" class="bg-white shadow-md fixed w-full top-0 z-50">
+      <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+        <div class="text-2xl font-bold text-sky-600">Luthfi Aditya</div>
+      </nav>
+    </header>
 
-  <div data-aos="fade-left" class="fixed bottom-10 right-10 z-50">
-    <a
-    class=" bg-blue-500 hover:bg-blue-600 hover:-translate-y-2 hover:-translate-x-2 hover:md:py-5 hover:md:px-10 text-white font-medium py-2 px-4 md:py-4 md:px-8 hover:font-bold rounded-full shadow-lg transition-all duration-300 ease-in-out"
-    href="mailto:luthfi2004aditya@gmail.com"
-    rel="noopener noreferrer"
-  >
-    Contact Me
-  </a>
-  </div>
-
-  <!-- Hero Section -->
-  <section data-aos="fade-up" data-aos-delay="600" id="home" class="min-h-screen flex items-center bg-gradient-to-r from-sky-50 to-sky-200 pt-16">
-    <div class="container mx-auto px-6 py-12">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 ">Welcome to my Portofolio! ^_^</h1>
-      <p class="text-xl mb-2">Hello! I'm <span class="text-sky-600 font-bold">Luthfi Aditya</span>,</p>
-      <p class="text-xl mb-6">
-        a <span class="text-sky-600 font-bold">Web Developer</span>, and 
-        <span class="text-sky-600 font-bold">Mobile Developer</span> that focusing on Interactive, Responive, and Multiplatform Web and Mobile Application Development.
-      </p>
-      <a href="about.html" class="bg-sky-500 hover:bg-sky-600 hover:-translate-y-3 focus:translate-y-3 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 inline-block mt-4">Let's know about me more!</a>
+    <div data-aos="fade-left" class="fixed bottom-10 right-10 z-50">
+      <a class="bg-blue-500 hover:bg-blue-600 hover:-translate-y-2 hover:-translate-x-2 hover:md:py-5 hover:md:px-10 text-white font-medium py-2 px-4 md:py-4 md:px-8 hover:font-bold rounded-full shadow-lg transition-all duration-300 ease-in-out" href="mailto:luthfi2004aditya@gmail.com" rel="noopener noreferrer"> Contact Me </a>
     </div>
-  </section>
 
-  <!-- Flex Container for About and Skills Sections -->
-  <div class="flex flex-wrap">
-    <!-- About Section -->
-    <section id="about" data-aos="fade-up" data-aos-delay="300" class="w-full md:w-1/2 py-16 bg-white px-6">
-      <h2 class="text-3xl font-bold mb-8 text-center ">About Me?</h2>
-      <div class="max-w-3xl mx-auto">
-        <p class="mb-4 text-gray-700">
-          I'm a <span class="text-blue-600 font-bold">6th Semester Computer Science</span> student with an enourmous interest in <span class="text-blue-600 font-bold">Web</span> and <span class="text-blue-600 font-bold">Mobile Development</span>. I have a pretty good knowledge in using <span class="text-[#E34F26] font-bold">HTML</span>, <span class="text-[#1572B6] font-bold">CSS</span>, <span class="text-[#B59F00] font-bold">JavaScript</span>, <span class="text-[#7F52FF] font-bold">Kotlin</span> language, also in Modern Framework like <span class="text-[#FF2D20] font-bold">Laravel</span> and <span class="text-[#38BDF8] font-bold">Tailwind</span>. I'm looking for an Internship Opportunity as a <span class="text-blue-600 font-bold">Web Developer</span> and/or <span class="text-blue-600 font-bold">Mobile Developer</span> to honing my skill and get an professional experience.
-        </p>
-        <p class="mb-4 text-gray-700">
-          I like to solve problems and creating an user interface that visually appealing and works well. I love to learn new technologies and keep up with the latest trends in web development.
-        </p>
-        <p class="mb-4 text-gray-700">Some of the soft skills I have:</p>
-        <ul class="list-disc pl-8 mb-6 text-gray-700 space-y-2">
-          <li>Fast Learner</li>
-          <li>Strong Problem Solving skills</li>
-          <li>Pay Attention to Details</li>
-          <li>Easy to work on Team</li>
-          <li>Effective Communiation</li>
-        </ul>
+    <!-- Hero Section -->
+    <section data-aos="fade-up" data-aos-delay="600" id="home" class="min-h-screen flex items-center bg-gradient-to-r from-sky-50 to-sky-200 pt-16">
+      <div class="container mx-auto px-6 py-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to my Portofolio! ^_^</h1>
+        <p class="text-xl mb-2">Hello! I'm <span class="text-sky-600 font-bold">Luthfi Aditya</span>,</p>
+        <p class="text-xl mb-6">a <span class="text-sky-600 font-bold">Web Developer</span>, and <span class="text-sky-600 font-bold">Mobile Developer</span> that focusing on Interactive, Responive, and Multiplatform Web and Mobile Application Development.</p>
+        <a href="about.html" class="bg-sky-500 hover:bg-sky-600 hover:-translate-y-3 focus:translate-y-3 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 inline-block mt-4">Let's know about me more!</a>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" data-aos="fade-up" data-aos-delay="700" class="w-full md:w-1/2 py-16 bg-sky-50 px-6">
-      <h2 data-aos="fade-up" class="text-3xl font-bold mb-12 text-center ">Keahlian Teknis</h2>
-      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6">
-        <!-- HTML Skill -->
-        <div data-aos="fade-up" data-aos-delay="500">
-          <div class="bg-white hover:text-[#E34F26] p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-linear text-center hover:-translate-y-1 transform">
-            <i class="fab fa-html5 text-5xl mb-4" style="color: #e34c26;"></i>
-            <h3 class="text-lg font-semibold">HTML5</h3>
-          </div>
+    <!-- Flex Container for About and Skills Sections -->
+    <div class="flex flex-wrap">
+      <!-- About Section -->
+      <section id="about" data-aos="fade-up" data-aos-delay="300" class="w-full md:w-1/2 py-16 bg-white px-6">
+        <h2 class="text-3xl font-bold mb-8 text-center">About Me?</h2>
+        <div class="max-w-3xl mx-auto">
+          <p class="mb-4 text-gray-700">I'm a <span class="text-blue-600 font-bold">6th Semester Computer Science</span> student with an enourmous interest in <span class="text-blue-600 font-bold">Web</span> and <span class="text-blue-600 font-bold">Mobile Development</span>. I have a pretty good knowledge in using <span class="text-[#E34F26] font-bold">HTML</span>, <span class="text-[#1572B6] font-bold">CSS</span>, <span class="text-[#B59F00] font-bold">JavaScript</span>, <span class="text-[#7F52FF] font-bold">Kotlin</span> language, also in Modern Framework like <span class="text-[#FF2D20] font-bold">Laravel</span> and <span class="text-[#38BDF8] font-bold">Tailwind</span>. I'm looking for an Internship Opportunity as a <span class="text-blue-600 font-bold">Web Developer</span> and/or <span class="text-blue-600 font-bold">Mobile Developer</span> to honing my skill and get an professional experience.</p>
+          <p class="mb-4 text-gray-700">I like to solve problems and creating an user interface that visually appealing and works well. I love to learn new technologies and keep up with the latest trends in web development.</p>
+          <p class="mb-4 text-gray-700">Some of the soft skills I have:</p>
+          <ul class="list-disc pl-8 mb-6 text-gray-700 space-y-2">
+            <li>Fast Learner</li>
+            <li>Strong Problem Solving skills</li>
+            <li>Pay Attention to Details</li>
+            <li>Easy to work on Team</li>
+            <li>Effective Communiation</li>
+          </ul>
         </div>
-        <!-- CSS Skill -->
-        <div data-aos="fade-up" data-aos-delay="700">
-          <div class="bg-white hover:text-[#264de4] p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
-            <i class="fab fa-css3-alt text-5xl mb-4" style="color: #264de4;"></i>
-            <h3 class="text-lg font-semibold ">CSS3</h3>
-          </div>
-        </div>
-        <!-- Tailwind CSS Skill -->
-        <div data-aos="fade-up" data-aos-delay="500">
-          <div class="bg-white hover:text-[#38BDF8] p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
-            <i class="fab fa-css3 text-5xl mb-4" style="color: #38bdf8;"></i>
-            <h3 class="text-lg font-semibold ">Tailwind CSS</h3>
-          </div>
-        </div>
-        <!-- Git Skill -->
-        <div data-aos="fade-up" data-aos-delay="700">
-          <div class="bg-white p-6 hover:text-[#f34f29] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
-            <i class="fab fa-git-alt text-5xl mb-4" style="color: #f34f29;"></i>
-            <h3 class="text-lg font-semibold ">Git</h3>
-          </div>
-        </div>
-        <!-- MySQL Skill -->
-        <div data-aos="fade-up" data-aos-delay="500">
-          <div class="bg-white p-6 hover:text-[#336791] hover:tex-[#336791] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
-            <i class="fas fa-database text-5xl mb-4" style="color: #336791;"></i>
-            <h3 class="text-lg font-semibold ">MySQL</h3>
-          </div>
-        </div>
-        <!-- Node.js Skill -->
-        <div data-aos="fade-up" data-aos-delay="700">
-          <div class="bg-white p-6 hover:text-[#3c873a] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
-            <i class="fab fa-node-js text-5xl mb-4" style="color: #3c873a;"></i>
-            <h3 class="text-lg font-semibold ">Node.js</h3>
-          </div>
-        </div>
-        <!-- MySQL Skill -->
-        <div data-aos="fade-up" data-aos-delay="500">
-          <div class="bg-white p-6 hover:text-[#3c873a] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
-            <i class="fab fa-android text-5xl mb-4" style="color: #3c873a;"></i>
-            <h3 class="text-lg font-semibold ">Kotlin</h3>
-          </div>
-        </div>
-        <!-- Node.js Skill -->
-        <div data-aos="fade-up" data-aos-delay="700">
-          <div class="bg-white p-6 hover:text-[#FF2D20] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
-            <i class="fab fa-laravel text-5xl mb-4" style="color: #FF2D20;"></i>
-            <h3 class="text-lg font-semibold ">Laravel</h3>
-          </div>  
-        </div>
-        <!-- MySQL Skill -->
-        <div data-aos="fade-up" data-aos-delay="500">
-          <div class="bg-white p-6 hover:text-[#74c0fc] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
-            <i class="fa-brands fa-flutter fa-bounce text-5xl mb-4" style="color: #74c0fc;"></i>
-            <h3 class="text-lg font-semibold ">Flutter</h3>
-          </div>
-        </div>
-        <!-- Node.js Skill -->
-        <div data-aos="fade-up" data-aos-delay="700">
-          <div class="bg-white p-6 hover:text-[#ff0000] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
-            <i class="fab fa-google text-5xl mb-4" style="color: #ff0000;"></i>
-            <h3 class="text-lg font-semibold ">Google Workspaces</h3>
-          </div>  
-        </div>
-      </div>
-    </section>
-  </div>
+      </section>
 
-  <!-- <section id="Project" class="bg-white">
+      <!-- Skills Section -->
+      <section id="skills" data-aos="fade-up" data-aos-delay="700" class="w-full md:w-1/2 py-16 bg-sky-50 px-6">
+        <h2 data-aos="fade-up" class="text-3xl font-bold mb-12 text-center">Keahlian Teknis</h2>
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <!-- HTML Skill -->
+          <div data-aos="fade-up" data-aos-delay="500">
+            <div class="bg-white hover:text-[#E34F26] p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-linear text-center hover:-translate-y-1 transform">
+              <i class="fab fa-html5 text-5xl mb-4" style="color: #e34c26"></i>
+              <h3 class="text-lg font-semibold">HTML5</h3>
+            </div>
+          </div>
+          <!-- CSS Skill -->
+          <div data-aos="fade-up" data-aos-delay="700">
+            <div class="bg-white hover:text-[#264de4] p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
+              <i class="fab fa-css3-alt text-5xl mb-4" style="color: #264de4"></i>
+              <h3 class="text-lg font-semibold">CSS3</h3>
+            </div>
+          </div>
+          <!-- Tailwind CSS Skill -->
+          <div data-aos="fade-up" data-aos-delay="500">
+            <div class="bg-white hover:text-[#38BDF8] p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
+              <i class="fab fa-css3 text-5xl mb-4" style="color: #38bdf8"></i>
+              <h3 class="text-lg font-semibold">Tailwind CSS</h3>
+            </div>
+          </div>
+          <!-- Git Skill -->
+          <div data-aos="fade-up" data-aos-delay="700">
+            <div class="bg-white p-6 hover:text-[#f34f29] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
+              <i class="fab fa-git-alt text-5xl mb-4" style="color: #f34f29"></i>
+              <h3 class="text-lg font-semibold">Git</h3>
+            </div>
+          </div>
+          <!-- MySQL Skill -->
+          <div data-aos="fade-up" data-aos-delay="500">
+            <div class="bg-white p-6 hover:text-[#336791] hover:tex-[#336791] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
+              <i class="fas fa-database text-5xl mb-4" style="color: #336791"></i>
+              <h3 class="text-lg font-semibold">MySQL</h3>
+            </div>
+          </div>
+          <!-- Node.js Skill -->
+          <div data-aos="fade-up" data-aos-delay="700">
+            <div class="bg-white p-6 hover:text-[#3c873a] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
+              <i class="fab fa-node-js text-5xl mb-4" style="color: #3c873a"></i>
+              <h3 class="text-lg font-semibold">Node.js</h3>
+            </div>
+          </div>
+          <!-- MySQL Skill -->
+          <div data-aos="fade-up" data-aos-delay="500">
+            <div class="bg-white p-6 hover:text-[#3c873a] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
+              <i class="fab fa-android text-5xl mb-4" style="color: #3c873a"></i>
+              <h3 class="text-lg font-semibold">Kotlin</h3>
+            </div>
+          </div>
+          <!-- Node.js Skill -->
+          <div data-aos="fade-up" data-aos-delay="700">
+            <div class="bg-white p-6 hover:text-[#FF2D20] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
+              <i class="fab fa-laravel text-5xl mb-4" style="color: #ff2d20"></i>
+              <h3 class="text-lg font-semibold">Laravel</h3>
+            </div>
+          </div>
+          <!-- MySQL Skill -->
+          <div data-aos="fade-up" data-aos-delay="500">
+            <div class="bg-white p-6 hover:text-[#74c0fc] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
+              <i class="fa-brands fa-flutter fa-bounce text-5xl mb-4" style="color: #74c0fc"></i>
+              <h3 class="text-lg font-semibold">Flutter</h3>
+            </div>
+          </div>
+          <!-- Node.js Skill -->
+          <div data-aos="fade-up" data-aos-delay="700">
+            <div class="bg-white p-6 hover:text-[#ff0000] rounded-lg shadow-md hover:shadow-lg transition duration-300 text-center hover:-translate-y-1">
+              <i class="fab fa-google text-5xl mb-4" style="color: #ff0000"></i>
+              <h3 class="text-lg font-semibold">Google Workspaces</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- <section id="Project" class="bg-white">
     <h1 class="font-bold text-center text-4xl pt-6">My Project</h1>
     <div class="container mx-auto px-6 py-12">
       <div class="font-inter h-screen bg-white flex justify-center mx-10 m-20 items-center">
@@ -237,16 +224,15 @@
 
     <section id="projects" data-aos="fade-up" data-aos-delay="400" class="py-16 bg-white">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-12 text-center ">Proyek Terbaru</h2>
+        <h2 class="text-3xl font-bold mb-12 text-center">Proyek Terbaru</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
           <div data-aos="fade-up" data-aos-mobile="fade-right" data-aos-delay="500">
             <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
               <div class="w-full h-48 bg-gray-200">
                 <img src="/api/placeholder/400/320" alt="Proyek 1" class="w-full h-full object-cover" />
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2 ">Mental.ly App</h3>
+                <h3 class="text-xl font-semibold mb-2">Mental.ly App</h3>
                 <p class="text-gray-600 mb-4">Aplikasi Capstone project di Bangkit Academy untuk memprediksi mental kesehatan.</p>
                 <div class="flex flex-wrap gap-2 mb-4">
                   <span class="bg-sky-100 text-sky-800 text-xs px-3 py-1 rounded-full">Kotlin</span>
@@ -256,14 +242,14 @@
               </div>
             </div>
           </div>
-          
+
           <div data-aos="fade-up" data-aos-mobile="fade-right" data-aos-delay="500">
             <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
               <div class="w-full h-48 bg-gray-200">
                 <img src="/api/placeholder/400/320" alt="Proyek 2" class="w-full h-full object-cover" />
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2 ">Emergency Service Response</h3>
+                <h3 class="text-xl font-semibold mb-2">Emergency Service Response</h3>
                 <p class="text-gray-600 mb-4">Sebuah projek tugas akhir semester aplikasi web untuk membantu pengguna dalam menghadapi keadaan darurat.</p>
                 <div class="flex flex-wrap gap-2 mb-4">
                   <span class="bg-sky-100 text-sky-800 text-xs px-3 py-1 rounded-full">HTML</span>
@@ -275,14 +261,14 @@
               </div>
             </div>
           </div>
-          
+
           <div data-aos="fade-up" data-aos-mobile="fade-right" data-aos-delay="500">
             <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
               <div class="w-full h-48 bg-gray-200">
                 <img src="/api/placeholder/400/320" alt="Proyek 3" class="w-full h-full object-cover" />
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2 ">SIP-SJ (SISTEM INFORMASI POSYANDU SEPUTIH JAYA)</h3>
+                <h3 class="text-xl font-semibold mb-2">SIP-SJ (SISTEM INFORMASI POSYANDU SEPUTIH JAYA)</h3>
                 <p class="text-gray-600 mb-4">Website untuk mengelola data dan informasi posyandu di Kelurahan Seputih Jaya</p>
                 <div class="flex flex-wrap gap-2 mb-4">
                   <span class="bg-sky-100 text-sky-800 text-xs px-3 py-1 rounded-full">Laravel</span>
@@ -298,99 +284,99 @@
       </div>
     </section>
 
-  <!-- Footer -->
-  <footer data-aos="fade-up" data-aos-delay="400" class="bg-white py-12 border-t border-gray-200">
-    <div class="container mx-auto px-6">
-      <div class="flex justify-center space-x-6 mb-6">
-        <div data-aos="zoom-in" data-aos-delay="700">
-          <a href="https://www.github.com/LuthfiAditya01" class="text-gray-600 hover:text-sky-500 transition-all duration-300">
-            <i class="fab fa-github text-2xl hover:text-4xl transition-all duration-300"></i>
-          </a>
+    <!-- Footer -->
+    <footer data-aos="fade-up" data-aos-delay="400" class="bg-white py-12 border-t border-gray-200">
+      <div class="container mx-auto px-6">
+        <div class="flex justify-center space-x-6 mb-6">
+          <div data-aos="zoom-in" data-aos-delay="700">
+            <a href="https://www.github.com/LuthfiAditya01" class="text-gray-600 hover:text-sky-500 transition-all duration-300">
+              <i class="fab fa-github text-2xl hover:text-4xl transition-all duration-300"></i>
+            </a>
+          </div>
+          <div data-aos="zoom-in" data-aos-delay="700">
+            <a href="https://www.linkedin.com/in/luthfi-aditya-191370242/" class="text-gray-600 hover:text-sky-500 transition-all duration-300">
+              <i class="fab fa-linkedin text-2xl hover:text-4xl transition-all duration-300"></i>
+            </a>
+          </div>
+          <div data-aos="zoom-in" data-aos-delay="700">
+            <a href="https://www.instagram.com/aditeverything_" class="text-gray-600 hover:text-sky-500 transition-all duration-300">
+              <i class="fab fa-instagram text-2xl hover:text-4xl transition-all duration-300"></i>
+            </a>
+          </div>
         </div>
-        <div data-aos="zoom-in" data-aos-delay="700">
-          <a href="https://www.linkedin.com/in/luthfi-aditya-191370242/" class="text-gray-600 hover:text-sky-500 transition-all duration-300">
-            <i class="fab fa-linkedin text-2xl hover:text-4xl transition-all duration-300"></i>
-          </a>
-        </div>
-        <div data-aos="zoom-in" data-aos-delay="700">
-          <a href="https://www.instagram.com/aditeverything_" class="text-gray-600 hover:text-sky-500 transition-all duration-300">
-            <i class="fab fa-instagram text-2xl hover:text-4xl transition-all duration-300"></i>
-          </a>
-        </div>
+        <p class="text-center text-gray-600">&copy; 2025 Luthfi Aditya. Hak Cipta Dilindungi.</p>
       </div>
-      <p class="text-center text-gray-600">&copy; 2025 Luthfi Aditya. Hak Cipta Dilindungi.</p>
-    </div>
-  </footer>
-</body>
-<script>
-  AOS.init({
+    </footer>
+  </body>
+  <script>
+    AOS.init({
       duration: 800,
       once: true, // Animasi hanya sekali
       offset: 120, // Offset trigger (px)
       easing: 'ease-out-quad',
-      useClassNames: true,         // generate class, bukan inline style
-      disableMutationObserver: true
-  });
-</script>
-<script>
-  AOS.init({
-    duration: 800,
-    once: true,
-    offset: 120,
-    easing: 'ease-out-quad',
-    mirror: false // Tambahkan ini untuk mencegah animasi bolak-balik
-  });
-</script>
-<script>
-  // Fungsi untuk memeriksa ukuran layar dan mengubah atribut AOS
-  function handleResponsiveAnimations() {
-    const projectCards = document.querySelectorAll('#projects .grid > div');
-    const isMobile = window.innerWidth < 768; // Definisi ukuran mobile (sesuai dengan breakpoint md Tailwind)
-    
-    projectCards.forEach(card => {
-      if (isMobile) {
-        // Gunakan fade-right untuk mobile
-        card.setAttribute('data-aos', 'fade-right');
-      } else {
-        // Gunakan fade-up untuk desktop
-        card.setAttribute('data-aos', 'fade-up');
-      }
+      useClassNames: true, // generate class, bukan inline style
+      disableMutationObserver: true,
     });
-  }
-
-  // Inisialisasi AOS
-  document.addEventListener('DOMContentLoaded', function() {
-    // Setel animasi berdasarkan ukuran layar saat memuat halaman
-    handleResponsiveAnimations();
-    
+  </script>
+  <script>
     AOS.init({
       duration: 800,
-      once: true, // animasi hanya sekali saat di-scroll
-      mirror: false
+      once: true,
+      offset: 120,
+      easing: 'ease-out-quad',
+      mirror: false, // Tambahkan ini untuk mencegah animasi bolak-balik
     });
-    
-    // Update animasi ketika ukuran layar berubah
-    window.addEventListener('resize', function() {
+  </script>
+  <script>
+    // Fungsi untuk memeriksa ukuran layar dan mengubah atribut AOS
+    function handleResponsiveAnimations() {
+      const projectCards = document.querySelectorAll('#projects .grid > div');
+      const isMobile = window.innerWidth < 768; // Definisi ukuran mobile (sesuai dengan breakpoint md Tailwind)
+
+      projectCards.forEach((card) => {
+        if (isMobile) {
+          // Gunakan fade-right untuk mobile
+          card.setAttribute('data-aos', 'fade-right');
+        } else {
+          // Gunakan fade-up untuk desktop
+          card.setAttribute('data-aos', 'fade-up');
+        }
+      });
+    }
+
+    // Inisialisasi AOS
+    document.addEventListener('DOMContentLoaded', function () {
+      // Setel animasi berdasarkan ukuran layar saat memuat halaman
       handleResponsiveAnimations();
-      AOS.refresh(); // Refresh AOS setelah perubahan
+
+      AOS.init({
+        duration: 800,
+        once: true, // animasi hanya sekali saat di-scroll
+        mirror: false,
+      });
+
+      // Update animasi ketika ukuran layar berubah
+      window.addEventListener('resize', function () {
+        handleResponsiveAnimations();
+        AOS.refresh(); // Refresh AOS setelah perubahan
+      });
     });
-  });
-</script>
-<script>
-  const cardsContainer = document.getElementById("cardsContainer");
+  </script>
+  <script>
+    const cardsContainer = document.getElementById('cardsContainer');
 
-  cardsContainer.addEventListener("click", (e) => {
-    const target = e.target.closest(".card");
+    cardsContainer.addEventListener('click', (e) => {
+      const target = e.target.closest('.card');
 
-    if (!target) return;
+      if (!target) return;
 
-    // Tailwind doesn't have a direct way to handle this with utility classes alone
-    // so we'll still use JS to manage the active state
-    cardsContainer.querySelectorAll(".card").forEach((card) => {
-      card.classList.remove("active");
+      // Tailwind doesn't have a direct way to handle this with utility classes alone
+      // so we'll still use JS to manage the active state
+      cardsContainer.querySelectorAll('.card').forEach((card) => {
+        card.classList.remove('active');
+      });
+
+      target.classList.add('active');
     });
-
-    target.classList.add("active");
-  });
-</script>
+  </script>
 </html>
