@@ -10,6 +10,9 @@ module.exports = {
         JetBrains: ['JetBrains Mono', 'monospace'],
         PermanentMarker: ['Permanent Marker', 'cursive'],
       },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      }
     },
   },
   plugins: [require('tailwindcss-text-stroke')],
