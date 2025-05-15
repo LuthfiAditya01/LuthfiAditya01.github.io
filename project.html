@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/output.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/output.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -14,24 +15,267 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Limelight&family=Permanent+Marker&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
-    <link rel="shortcut icon" href="img/letter-p.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/letter-p.png" type="image/x-icon" />
     <title>My Project</title>
-</head>
-<body class="font-JetBrains bg-gradient-to-r from-sky-50 to-sky-200">
+  </head>
+  <body class="font-JetBrains bg-gradient-to-r from-sky-50 to-sky-200">
     <header data-aos="fade-down" class="bg-white shadow-md fixed w-full top-0 z-50">
-        <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-          <div class="text-2xl font-bold text-sky-600 font-JetBrains"><a href="index.html">Luthfi Aditya</a></div>
-        </nav>
+      <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+        <div class="text-2xl font-bold text-sky-600 font-JetBrains"><a href="index.html">Luthfi Aditya</a></div>
+      </nav>
     </header>
-    <div data-aos="fade-down" data-aos-delay="500" class="flex justify-center items-center">
-        <h1 class="mt-20 text-6xl font-bold flex items-center gap-4">Page Under Construction <span class="inline-flex items-center"><img src="img/gear.png" class="animate-spin-slow w-2/12" alt=""></span></h1>
-    </div>
-</body>
-<script>
+    <section id="hero" class="mt-24">
+      <h1 data-aos="fade-down" data-aos-delay="500" class="text-center mx-16 text-4xl font-bold">Let's explore the journey of my coding! <span><i class="fa-solid fa-paper-plane fa-beat-fade" style="color: #39a6f9;"></i></span></h1>
+    </section>
+    <section id="project" class="md:m-16 m-4">
+        <!-- 2024 Project -->
+         <h1 data-aos="fade-up" data-aos-delay="500" class="text-start text-4xl font-bold my-6">2024</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project -->
+        <div data-aos="fade-up" data-aos-mobile="fade-right" data-aos-delay="500">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+            <div class="w-full h-48 bg-gray-200">
+              <img src="/api/placeholder/400/320" alt="Proyek 3" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Emergency Service Response (ESR)</h3>
+              <p class="text-gray-600 mb-4 text-md md:text-lg">Projek Website untuk <i>Final Project</i> mata kuliah Analisis dan Desain Sistem Informasi. Website ini berfungsi untuk membantu pengguna dalam membuat laporan kejadian darurat dan meminta bantuan dari pihak berwenang</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">HTML</span>
+                <span class="bg-sky-100 f text-sky-800 text-xs px-3 py-1 rounded-full">CSS</span>
+                <span class="bg-sky-100 f text-sky-800 text-xs px-3 py-1 rounded-full">PHP</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">JavaScript</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">MySQL</span>
+              </div>
+              <a href="https://github.com/rofiframadhanks/esr" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded transition duration-300">Lihat Proyek</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project -->
+        <div data-aos="fade-up" data-aos-delay="800" data-aos-mobile="fade-right">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+            <div class="w-full h-48 bg-gray-200">
+              <img src="/api/placeholder/400/320" alt="Proyek 3" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Mental.ly</h3>
+              <p class="text-gray-600 mb-4 text-md md:text-lg">Aplikasi mobile dengan menggunakan Kotlin yang bermanfaat untuk mendeteksi awal kesehatan mental pengguna dengan cara memberikan kuisioner mengenai kesehatan mental dan kebiasaan pengguna</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">Kotlin</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">Retrofit</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">Figma</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">Google Cloud</span>
+              </div>
+              <a href="https://github.com/AhlanAlghiff/Mental.ly-Project" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded transition duration-300">Lihat Proyek</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project -->
+        <div data-aos="fade-up" data-aos-delay="1200" data-aos-mobile="fade-right">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+            <div class="w-full h-48 bg-gray-200">
+              <img src="/api/placeholder/400/320" alt="Proyek 3" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Portofolio</h3>
+              <p class="text-gray-600 mb-4 text-md md:text-lg">Website portofolio yang berisi informasi tentang pengalaman dan proyek saya</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">HTML</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">TailwindCSS</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">JavaScript</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">Google Script</span>
+              </div>
+              <a href="https://fla-o-krezz.vercel.app" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded transition duration-300">Lihat Proyek</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project -->
+        <div data-aos="fade-up" data-aos-delay="500" data-aos-mobile="fade-right" data-aos-delay="500">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+            <div class="w-full h-48 bg-gray-200">
+              <img src="/api/placeholder/400/320" alt="Proyek 3" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">JKT48 Merch Shop</h3>
+              <p class="text-gray-600 mb-4 text-md md:text-lg">Project Website untuk <i>Final Project</i> mata kuliah Pemrograman Web. Website ini berfungsi untuk membeli merchandise JKT48 langsung dari website resmi tanpa melewati <i>Platform Online Shop</i> ketiga</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">HTML</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">CSS</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">PHP</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">MySQL</span>
+              </div>
+              <a href="https://github.com/andika1991/jkt48merchshop" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded transition duration-300">Lihat Proyek</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project -->
+        <div data-aos="fade-up" data-aos-delay="800" data-aos-mobile="fade-right" data-aos-delay="500">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+            <div class="w-full h-48 bg-gray-200">
+              <img src="/api/placeholder/400/320" alt="Proyek 3" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">DocTrol (Document Control)</h3>
+              <p class="text-gray-600 mb-4 text-md md:text-lg">Project Website untuk <i>Final Project</i> mata kuliah Manajemen Pengetahuan. Website ini berfungsi untuk membantu pengguna dalam memanajemen pembelajaran pada sebuah kelas. </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">HTML</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">CSS</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">PHP</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">MySQL</span>
+              </div>
+              <!-- <a href="https://github.com/andika1991/jkt48merchshop" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded transition duration-300">Lihat Proyek</a> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Project -->
+        <div data-aos="fade-up" data-aos-delay="1200" data-aos-mobile="fade-right" data-aos-delay="500">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+            <div class="w-full h-48 bg-gray-200">
+              <img src="/api/placeholder/400/320" alt="Proyek 3" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Perpustakaan Modern XYZ</h3>
+              <p class="text-gray-600 mb-4 text-md md:text-lg">Project Pra-UAS untuk Prasyarat pelaksanaan UAS mata kuliah Pemrograman Berbasis Objek. Projek ini Merupakan sebuah Sistem Informasi Perpustakaan yang dapat membantu pengguna dalam meminjam buku, Melihat Informasi Buku, dan Mengatur Anggota Perpustakaan.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">HTML</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">CSS</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">PHP</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">MySQL</span>
+              </div>
+              <!-- <a href="https://github.com/andika1991/jkt48merchshop" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded transition duration-300">Lihat Proyek</a> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+        <!-- 2025 Project -->
+         <h1 data-aos="fade-up" data-aos-delay="500" class="text-start text-4xl font-bold my-6">2025</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project -->
+        <div data-aos="fade-up" data-aos-mobile="fade-right" data-aos-delay="500">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+            <div class="w-full h-48 bg-gray-200">
+              <img src="/api/placeholder/400/320" alt="Proyek 3" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">SIP-SJ (SISTEM INFORMASI POSYANDU SEPUTIH JAYA)</h3>
+              <p class="text-gray-600 mb-4 text-md md:text-lg">Website untuk mengelola data dan informasi posyandu di Kelurahan Seputih Jaya</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">Laravel</span>
+                <span class="bg-sky-100 f text-sky-800 text-xs px-3 py-1 rounded-full">TailwindCSS</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">JavaScript</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">MySQL</span>
+              </div>
+              <a href="https://github.com/LuthfiAditya01/SIP-SJ" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded transition duration-300">Lihat Proyek</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project -->
+        <div data-aos="fade-up" data-aos-delay="800" data-aos-mobile="fade-right" data-aos-delay="500">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+            <div class="w-full h-48 bg-gray-200">
+              <img src="/api/placeholder/400/320" alt="Proyek 3" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Fla-O-Krezz</h3>
+              <p class="text-gray-600 mb-4 text-md md:text-lg">Website berbentuk seperti brosur untuk memperkenalkan kreasi Pudding Fla-O-Krezz</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">HTML</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">TailwindCSS</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">JavaScript</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">Google Script</span>
+              </div>
+              <a href="https://fla-o-krezz.vercel.app" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded transition duration-300">Lihat Proyek</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project -->
+        <div data-aos="fade-up" data-aos-delay="1200" data-aos-mobile="fade-right" data-aos-delay="500">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+            <div class="w-full h-48 bg-gray-200">
+              <img src="/api/placeholder/400/320" alt="Proyek 3" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Portofolio</h3>
+              <p class="text-gray-600 mb-4 text-md md:text-lg">Website portofolio yang berisi informasi tentang pengalaman dan proyek saya</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">HTML</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">TailwindCSS</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">JavaScript</span>
+                <span class="bg-sky-100 text-sky-800 text-sm px-3 py-1 rounded-full">Google Script</span>
+              </div>
+              <a href="https://fla-o-krezz.vercel.app" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded transition duration-300">Lihat Proyek</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </body>
+  <script>
     AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
+      duration: 800,
       once: true,
+      offset: 120,
+      easing: 'ease-out-quad',
+      useClassNames: true,
+      disableMutationObserver: true,
+      mirror: false,
+    });
+  </script>
+  <script>
+    // Fungsi untuk memeriksa ukuran layar dan mengubah atribut AOS
+    function handleResponsiveAnimations() {
+      const projectCards = document.querySelectorAll('#project .grid > div');
+      const isMobile = window.innerWidth < 768; // Definisi ukuran mobile (sesuai dengan breakpoint md Tailwind)
+
+      projectCards.forEach((card) => {
+        if (isMobile) {
+          // Gunakan data-aos-mobile jika ada, jika tidak gunakan fade-right
+          const mobileAnimation = card.getAttribute('data-aos-mobile') || 'fade-right';
+          card.setAttribute('data-aos', mobileAnimation);
+          // Set delay yang sama untuk mobile
+          card.setAttribute('data-aos-delay', '0');
+        } else {
+          // Gunakan data-aos default untuk desktop
+          const desktopAnimation = card.getAttribute('data-aos') || 'fade-up';
+          card.setAttribute('data-aos', desktopAnimation);
+          // Kembalikan delay asli untuk desktop
+          const originalDelay = card.getAttribute('data-aos-delay');
+          if (originalDelay) {
+            card.setAttribute('data-aos-delay', originalDelay);
+          } else {
+            card.removeAttribute('data-aos-delay');
+          }
+        }
+      });
+    }
+
+    // Inisialisasi AOS
+    document.addEventListener('DOMContentLoaded', function () {
+      // Setel animasi berdasarkan ukuran layar saat memuat halaman
+      handleResponsiveAnimations();
+
+      AOS.init({
+        duration: 800,
+        once: true, // animasi hanya sekali saat di-scroll
+        mirror: false,
+        delay: 0,
+        offset: 120,
+      });
+
+      // Update animasi ketika ukuran layar berubah
+      window.addEventListener('resize', function () {
+        handleResponsiveAnimations();
+        AOS.refresh(); // Refresh AOS setelah perubahan
+      });
     });
   </script>
 </html>

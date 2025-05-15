@@ -228,9 +228,13 @@
   </body>
   <script>
     AOS.init({
-      duration: 1200,
-      easing: 'ease-in-out',
+      duration: 800,
       once: true,
+      offset: 120,
+      easing: 'ease-out-quad',
+      useClassNames: true,
+      disableMutationObserver: true,
+      mirror: false,
     });
   </script>
 </html>

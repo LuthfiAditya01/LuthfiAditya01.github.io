@@ -252,9 +252,10 @@
             </div>
           </div>
         </div>
-        Let's View all of my Project <br> 
-        <a href="project.html" class="bg-sky-500 animate-bounce hover:bg-sky-600 hover:-translate-y-3 focus:translate-y-3 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 inline-block mt-4">shall we?</a>
-
+        <div class="mt-8 lg:mt-4">
+          Let's View all of my Project <br>
+          <a href="project.html" class="bg-sky-500 animate-bounce hover:animate-none hover:bg-sky-600 hover:-translate-y-3 focus:translate-y-3 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 inline-block mt-4">shall we?</a>
+        </div>
       </div>
     </section>
 
@@ -285,20 +286,12 @@
   <script>
     AOS.init({
       duration: 800,
-      once: true, // Animasi hanya sekali
-      offset: 120, // Offset trigger (px)
-      easing: 'ease-out-quad',
-      useClassNames: true, // generate class, bukan inline style
-      disableMutationObserver: true,
-    });
-  </script>
-  <script>
-    AOS.init({
-      duration: 800,
       once: true,
       offset: 120,
       easing: 'ease-out-quad',
-      mirror: false, // Tambahkan ini untuk mencegah animasi bolak-balik
+      useClassNames: true,
+      disableMutationObserver: true,
+      mirror: false,
     });
   </script>
   <script>
