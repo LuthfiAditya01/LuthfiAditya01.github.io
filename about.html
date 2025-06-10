@@ -320,6 +320,8 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       .skill-modal.active {
@@ -343,8 +345,165 @@
         position: relative;
       }
 
+      /* Mobile Responsive Modal */
+      @media (max-width: 768px) {
+        .skill-modal {
+          padding: 0.5rem;
+          align-items: flex-start;
+          padding-top: 2rem;
+        }
+
+        .modal-content {
+          width: 100%;
+          max-width: none;
+          margin: 0;
+          padding: 1rem;
+          max-height: 75vh;
+          border-radius: 12px;
+          transform: scale(0.9) translateY(10px);
+        }
+
+        .modal-icon {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .modal-title {
+          font-size: 1.25rem;
+          margin-bottom: 0.5rem;
+          line-height: 1.3;
+        }
+
+        .skill-level {
+          flex-direction: column;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .skill-level span {
+          font-size: 0.9rem;
+        }
+
+        .close-modal {
+          width: 30px;
+          height: 30px;
+          top: 0.5rem;
+          right: 0.5rem;
+        }
+
+        .skill-details {
+          font-size: 0.8rem;
+          line-height: 1.4;
+        }
+
+        .skill-details p {
+          margin-bottom: 0.75rem;
+        }
+
+        .skill-details h3 {
+          font-size: 0.95rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .skill-list {
+          margin: 0.5rem 0;
+        }
+
+        .skill-list li {
+          padding: 0.25rem 0;
+          font-size: 0.8rem;
+          line-height: 1.3;
+        }
+
+        .skill-details > div:last-child {
+          padding: 0.75rem;
+          margin-top: 0.75rem;
+        }
+
+        .skill-details > div:last-child h3 {
+          margin-bottom: 0.25rem;
+        }
+
+        .skill-details > div:last-child p {
+          margin-bottom: 0;
+          font-size: 0.8rem;
+          line-height: 1.4;
+        }
+      }
+
+      /* Extra Small Mobile */
+      @media (max-width: 480px) {
+        .skill-modal {
+          padding: 0.25rem;
+          padding-top: 1rem;
+        }
+
+        .modal-content {
+          padding: 0.75rem;
+          max-height: 80vh;
+          border-radius: 10px;
+        }
+
+        .modal-icon {
+          font-size: 1.25rem;
+          margin-bottom: 0.25rem;
+        }
+
+        .modal-title {
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .skill-level {
+          margin-bottom: 0.75rem;
+        }
+
+        .skill-level span {
+          font-size: 0.85rem;
+        }
+
+        .skill-details {
+          font-size: 0.75rem;
+        }
+
+        .skill-details h3 {
+          font-size: 0.9rem;
+        }
+
+        .skill-list li {
+          font-size: 0.75rem;
+          padding: 0.2rem 0;
+        }
+
+        .close-modal {
+          width: 28px;
+          height: 28px;
+          top: 0.5rem;
+          right: 0.5rem;
+        }
+
+        .close-modal i {
+          font-size: 0.8rem;
+        }
+
+        .skill-details > div:last-child {
+          padding: 0.5rem;
+        }
+
+        .skill-details > div:last-child p {
+          font-size: 0.75rem;
+        }
+      }
+
       .skill-modal.active .modal-content {
         transform: scale(1) translateY(0);
+      }
+
+      /* Fix mobile transform */
+      @media (max-width: 768px) {
+        .skill-modal.active .modal-content {
+          transform: scale(1) translateY(0);
+        }
       }
 
       .modal-content::before {
@@ -456,12 +615,47 @@
         border-radius: 8px;
         padding: 1rem;
         margin: -1rem;
+        position: relative;
       }
 
       .progress-item:hover {
         transform: translateX(10px);
         background: rgba(255, 255, 255, 0.05);
         box-shadow: 0 8px 25px rgba(56, 189, 248, 0.15);
+      }
+
+      /* Mobile Touch Feedback */
+      @media (max-width: 768px) {
+        .progress-item {
+          padding: 0.75rem;
+          margin: -0.75rem;
+        }
+
+        .progress-item:hover {
+          transform: none;
+        }
+
+        .progress-item:active {
+          transform: scale(0.98);
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Add visual indicator for clickable items on mobile */
+        .progress-item::after {
+          content: '👆';
+          position: absolute;
+          right: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          opacity: 0.6;
+          font-size: 1.2rem;
+          animation: pulse-click 2s ease-in-out infinite;
+        }
+      }
+
+      @keyframes pulse-click {
+        0%, 100% { opacity: 0.6; transform: translateY(-50%) scale(1); }
+        50% { opacity: 0.8; transform: translateY(-50%) scale(1.1); }
       }
     </style>
   </head>
