@@ -16,225 +16,645 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Limelight&family=Permanent+Marker&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    
+    <style>
+      /* Enhanced Animations and Backgrounds */
+      .floating-shapes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .floating-shape {
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(45deg, rgba(56, 189, 248, 0.1), rgba(99, 102, 241, 0.1));
+        backdrop-filter: blur(20px);
+        animation: float 20s infinite linear;
+      }
+
+      .shape-1 {
+        width: 80px;
+        height: 80px;
+        top: 15%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      .shape-2 {
+        width: 60px;
+        height: 60px;
+        top: 70%;
+        left: 85%;
+        animation-delay: -7s;
+      }
+
+      .shape-3 {
+        width: 100px;
+        height: 100px;
+        top: 45%;
+        left: 5%;
+        animation-delay: -14s;
+      }
+
+      .shape-4 {
+        width: 120px;
+        height: 120px;
+        top: 25%;
+        left: 80%;
+        animation-delay: -3s;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px) rotate(0deg);
+          opacity: 1;
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(0px) rotate(360deg);
+          opacity: 1;
+        }
+      }
+
+      /* Particle System */
+      .particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .particle {
+        position: absolute;
+        background: radial-gradient(circle, rgba(56, 189, 248, 0.6) 0%, transparent 50%);
+        border-radius: 50%;
+        animation: particle-float 12s infinite linear;
+      }
+
+      .particle:nth-child(1) { width: 3px; height: 3px; left: 10%; animation-delay: 0s; }
+      .particle:nth-child(2) { width: 4px; height: 4px; left: 25%; animation-delay: -3s; }
+      .particle:nth-child(3) { width: 2px; height: 2px; left: 40%; animation-delay: -6s; }
+      .particle:nth-child(4) { width: 5px; height: 5px; left: 55%; animation-delay: -9s; }
+      .particle:nth-child(5) { width: 3px; height: 3px; left: 70%; animation-delay: -12s; }
+      .particle:nth-child(6) { width: 4px; height: 4px; left: 85%; animation-delay: -2s; }
+
+      @keyframes particle-float {
+        0% {
+          transform: translateY(100vh) scale(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100px) scale(1);
+          opacity: 0;
+        }
+      }
+
+      /* Enhanced Cards */
+      .profile-card {
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 24px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .profile-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
+        border-color: rgba(56, 189, 248, 0.3);
+      }
+
+      .skills-card {
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .skills-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15);
+        border-color: rgba(56, 189, 248, 0.2);
+      }
+
+      /* Enhanced Progress Bars */
+      .progress-item {
+        transition: all 0.3s ease;
+      }
+
+      .progress-item:hover {
+        transform: translateX(10px);
+      }
+
+      .progress-bar {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .progress-fill {
+        height: 100%;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .progress-fill::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        animation: shimmer 2s infinite;
+      }
+
+      @keyframes shimmer {
+        0% { left: -100%; }
+        100% { left: 100%; }
+      }
+
+      /* Enhanced Typography */
+      .gradient-text {
+        background: linear-gradient(135deg, #60a5fa, #34d399, #a78bfa);
+        background-size: 200% 200%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradient-shift 3s ease infinite;
+      }
+
+      @keyframes gradient-shift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+
+      /* Profile Image Enhancement */
+      .profile-image {
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(56, 189, 248, 0.3);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .profile-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent, rgba(56, 189, 248, 0.2), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .profile-image:hover::before {
+        opacity: 1;
+      }
+
+      .profile-image:hover {
+        transform: scale(1.05) rotate(2deg);
+        box-shadow: 0 25px 50px rgba(56, 189, 248, 0.4);
+      }
+
+      /* Glowing Button Effects */
+      .glow-button {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .glow-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .glow-button:hover::before {
+        left: 100%;
+      }
+
+      .glow-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+      }
+
+      /* Social Icons Enhancement */
+      .social-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .social-icon::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle, rgba(56, 189, 248, 0.3) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .social-icon:hover::before {
+        opacity: 1;
+      }
+
+      .social-icon:hover {
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+        border-color: rgba(56, 189, 248, 0.5);
+      }
+    </style>
   </head>
-  <body class="bg-gradient-to-r from-sky-50 to-sky-200 pt-16">
-    <header data-aos="fade-down" class="bg-white shadow-md fixed w-full top-0 z-50">
-      <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-        <div class="text-2xl font-bold text-sky-600 font-JetBrains"><a href="index.html">Luthfi Aditya</a></div>
-      </nav>
-    </header>
-    <div class="md:flex w-full items-center justify-around mt-20 mb-10">
-      <img data-aos="fade-right" src="img/IMG-20250217-WA0099.jpg" class="rounded-lg w-auto mx-auto mb-3 max-w-xs md:max-w-sm lg:max-w-md" alt="" />
-      <section id="details" class="px-4 mx-auto">
-        <div data-aos="fade-left" class="w-full mx-auto font-JetBrains">
-          <div class="max-w-5xl mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
-            <h2 class="text-2xl font-semibold text-green-500 mb-4">Hello there! ヾ(•ω•`)o</h2>
-            <p class="mb-4 leading-relaxed">Hi! I'm Luthfi Aditya. 6th Semester College Student. I'm having a big interest in <span class="font-bold text-blue-500">Web Development</span> and <span class="font-bold text-blue-500">Mobile Development</span>.</p>
-            <p class="mb-4 leading-relaxed">I'm studying at <span class="font-bold text-blue-500">Lampung University</span> at <span class="font-bold text-blue-500">Computer Science</span> Department. I'm having many experience in making a project. some of them are :</p>
-            <ol type="1" class="list-decimal list-outside pl-8">
-              <li><strong>Mental.ly</strong>: Mental.ly is a Mobile Appilication that use to predict how big is the chance that we have a mental issue according to the well-trained Machine Learning model. This project is a Team Project which is a Mandatory Requirement to Graduate from Independent Study Program by Kampus Merdeka in Bangkit Academy.</li>
-              <li><strong>Emergency Service Response</strong>: Emergency Service Response (shortened as ESR) is a Web-Based Application that use to connect user (parties in need of emergency assistance) to the member of Fire Department with the help of Admin to make sure every Emergency Assistance could be done optimally. This project is a Team Project that made as a Final Project for <strong>Analysis and Design of information System</strong> subject.</li>
-            </ol>
-            <p class="mb-4 leading-relaxed">I'd like to jogging and hit the gym in my spare time. I'm always full of energy in learning new things and improving both hard and soft of my skill further.</p>
-          </div>
-        </div>
-      </section>
+  
+  <body class="font-JetBrains bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 min-h-screen relative overflow-x-hidden text-white">
+    <!-- Animated Background -->
+    <div class="fixed inset-0 z-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10"></div>
+      <div class="floating-shapes">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+      </div>
+      <!-- Animated particles -->
+      <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
     </div>
 
-    <section data-aos="fade-up" id="skills" class="text-center mx-auto font-JetBrains">
-      <h1 class="bg-white text-4xl text-blue-300 w-full font-extrabold mx-auto mb-6 md:rounded-lg max-w-screen-md" style="-webkit-text-stroke: 1px; -webkit-text-stroke-color: #3b82f6">Let's see what can I offer you! 😎</h1>
-      <div class="flex flex-wrap justify-around mb-8 gap-7">
-        <div data-aos="fade-right" data-aos-delay="700" class="bg-white w-[500px] rounded-lg px-10 py-5">
-          <h2 class="text-2xl font-bold text-black mb-4">Hard Skills</h2>
-          <div data-aos="fade-right" data-aos-delay="100">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#E34F26] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">HTML</span>
-              <span class="text-xl md:group-hover:text-[#E34F26] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">90%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#E34F26] transition-all h-2.5 rounded-full" style="width: 90%"></div>
-            </div>
-          </div>
-          <div data-aos="fade-right" data-aos-delay="100">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#264de4] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">CSS3</span>
-              <span class="text-xl md:group-hover:text-[#264de4] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">75%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#264de4] transition-all h-2.5 rounded-full" style="width: 80%"></div>
-            </div>
-          </div>
-          <div data-aos="fade-right" data-aos-delay="100">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#38bdf8] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">Tailwind CSS</span>
-              <span class="text-xl md:group-hover:text-[#38bdf8] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">80%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#38bdf8] transition-all h-2.5 rounded-full" style="width: 80%"></div>
-            </div>
-          </div>
-          <div data-aos="fade-right" data-aos-delay="100">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#f34f29] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">Git</span>
-              <span class="text-xl md:group-hover:text-[#f34f29] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">70%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#f34f29] transition-all h-2.5 rounded-full" style="width: 70%"></div>
-            </div>
-          </div>
-          <div data-aos="fade-right" data-aos-delay="100">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#336791] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">MySQL</span>
-              <span class="text-xl md:group-hover:text-[#336791] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">75%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#336791] transition-all h-2.5 rounded-full" style="width: 75%"></div>
-            </div>
-          </div>
-          <div data-aos="fade-right" data-aos-delay="100">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#3c873a] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">Node.js</span>
-              <span class="text-xl md:group-hover:text-[#3c873a] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">60%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#3c873a] transition-all h-2.5 rounded-full" style="width: 60%"></div>
-            </div>
-          </div>
-          <div data-aos="fade-right" data-aos-delay="100">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#3c873a] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">Kotlin</span>
-              <span class="text-xl md:group-hover:text-[#3c873a] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">70%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#3c873a] transition-all h-2.5 rounded-full" style="width: 70%"></div>
-            </div>
-          </div>
-          <div data-aos="fade-right" data-aos-delay="100">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#FF2D20] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">Laravel</span>
-              <span class="text-xl md:group-hover:text-[#FF2D20] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">75%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#FF2D20] transition-all h-2.5 rounded-full" style="width: 80%"></div>
-            </div>
-          </div>
-          <div data-aos="fade-right" data-aos-delay="100">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#74c0fc] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">Flutter</span>
-              <span class="text-xl md:group-hover:text-[#74c0fc] md:group-hover:text-xl md:text-lg transition-all duration-300 text-black">35% (and still going 📈)</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#74c0fc] transition-all h-2.5 rounded-full" style="width: 35%"></div>
-            </div>
-          </div>
-          <div data-aos="fade-right" data-aos-delay="100">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#ff0000] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">Google Workspaces</span>
-              <span class="text-xl md:group-hover:text-[#ff0000] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">90%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#ff0000] transition-all h-2.5 rounded-full" style="width: 90%"></div>
-            </div>
-          </div>
+    <!-- Glassmorphism Header -->
+    <header data-aos="fade-down" class="backdrop-blur-md bg-white/10 border-b border-white/20 fixed w-full top-0 z-50">
+      <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+        <div class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-JetBrains">
+          <a href="index.html" class="hover:scale-105 transition-transform duration-300">Luthfi Aditya</a>
         </div>
-        <div data-aos="fade-left" data-aos-delay="700" class="bg-white w-[500px] rounded-lg px-10 py-5 mb-8">
-          <h2 class="text-2xl font-bold text-black mb-4">Soft Skills</h2>
-          <div data-aos="fade-left" data-aos-delay="100" data-aos-duration="500">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#ff0000] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">Teamwork</span>
-              <span class="text-xl md:group-hover:text-[#ff0000] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">90%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#ff0000] transition-all h-2.5 rounded-full" style="width: 90%"></div>
-            </div>
-          </div>
-          <div data-aos="fade-left" data-aos-delay="100" data-aos-duration="500">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#ff0000] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">Public Speaking</span>
-              <span class="text-xl md:group-hover:text-[#ff0000] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">85%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#ff0000] transition-all h-2.5 rounded-full" style="width: 85%"></div>
+        <!-- Cute Cat Navigation indicator -->
+        <div class="hidden md:flex space-x-1">
+          <div class="text-lg animate-bounce">🐱</div>
+          <div class="text-lg animate-bounce delay-75">🐾</div>
+          <div class="text-lg animate-bounce delay-150">😸</div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Enhanced Profile Section -->
+    <div class="relative z-10 pt-24 pb-10">
+      <div class="container mx-auto px-4">
+        <div class="lg:flex w-full items-center justify-center gap-12 mt-20 mb-20">
+          <!-- Profile Image -->
+          <div data-aos="fade-right" data-aos-delay="200" class="flex justify-center mb-8 lg:mb-0">
+            <div class="profile-image max-w-xs md:max-w-sm lg:max-w-md">
+              <img src="img/IMG-20250217-WA0099.jpg" class="w-full h-auto rounded-lg" alt="Luthfi Aditya Profile" />
             </div>
           </div>
-          <div data-aos="fade-left" data-aos-delay="100" data-aos-duration="500">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#ff0000] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">Time Management</span>
-              <span class="text-xl md:group-hover:text-[#ff0000] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">80%</span>
+
+          <!-- Profile Details -->
+          <section id="details" class="flex-1 max-w-3xl">
+            <div data-aos="fade-left" data-aos-delay="400" class="profile-card p-8">
+              <h2 class="text-3xl font-bold gradient-text mb-6">
+                <i class="fas fa-hand-peace mr-3"></i>Hello there! ヾ(•ω•`)o
+              </h2>
+              
+              <div class="space-y-6 text-slate-200 leading-relaxed">
+                <p class="text-lg">
+                  Hi! I'm <span class="font-bold text-blue-400">Luthfi Aditya</span>. 6th Semester College Student. 
+                  I'm having a big interest in <span class="font-bold text-green-400">Web Development</span> and 
+                  <span class="font-bold text-purple-400">Mobile Development</span>.
+                </p>
+                
+                <p class="text-lg">
+                  I'm studying at <span class="font-bold text-blue-400">Lampung University</span> at 
+                  <span class="font-bold text-indigo-400">Computer Science</span> Department. 
+                  I'm having many experience in making a project. some of them are:
+                </p>
+                
+                <div class="bg-slate-800/30 rounded-lg p-6 border border-slate-700/50">
+                  <ol class="list-decimal list-outside pl-6 space-y-4">
+                    <li class="text-slate-300">
+                      <strong class="text-green-400">Mental.ly</strong>: Mental.ly is a Mobile Application that use to predict how big is the chance that we have a mental issue according to the well-trained Machine Learning model. This project is a Team Project which is a Mandatory Requirement to Graduate from Independent Study Program by Kampus Merdeka in Bangkit Academy.
+                    </li>
+                    <li class="text-slate-300">
+                      <strong class="text-blue-400">Emergency Service Response</strong>: Emergency Service Response (shortened as ESR) is a Web-Based Application that use to connect user (parties in need of emergency assistance) to the member of Fire Department with the help of Admin to make sure every Emergency Assistance could be done optimally. This project is a Team Project that made as a Final Project for <strong>Analysis and Design of information System</strong> subject.
+                    </li>
+                  </ol>
+                </div>
+                
+                <p class="text-lg">
+                  I'd like to jogging and hit the gym in my spare time. I'm always full of energy in learning new things and improving both hard and soft of my skill further. 
+                  <span class="text-yellow-400">💪✨</span>
+                </p>
+              </div>
             </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#ff0000] transition-all h-2.5 rounded-full" style="width: 80%"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enhanced Skills Section -->
+    <section data-aos="fade-up" data-aos-delay="600" id="skills" class="relative z-10 py-20">
+      <div class="container mx-auto px-4">
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+          <h1 class="text-4xl md:text-6xl font-extrabold gradient-text mb-4">
+            Let's see what can I offer you! 😎
+          </h1>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Skills Cards Container -->
+        <div class="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
+          
+          <!-- Hard Skills Card -->
+          <div data-aos="fade-right" data-aos-delay="800" class="skills-card p-8 w-full max-w-2xl">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-400">
+              <i class="fas fa-code mr-3"></i>Hard Skills
+            </h2>
+            
+            <div class="space-y-6">
+              <!-- HTML Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-orange-400">HTML</span>
+                  <span class="text-lg font-bold text-orange-400">90%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-orange-500 to-red-500" style="width: 90%"></div>
+                </div>
+              </div>
+
+              <!-- CSS3 Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-blue-400">CSS3</span>
+                  <span class="text-lg font-bold text-blue-400">75%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-blue-500 to-indigo-500" style="width: 75%"></div>
+                </div>
+              </div>
+
+              <!-- Tailwind CSS Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-cyan-400">Tailwind CSS</span>
+                  <span class="text-lg font-bold text-cyan-400">80%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-cyan-500 to-blue-500" style="width: 80%"></div>
+                </div>
+              </div>
+
+              <!-- Git Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-red-400">Git</span>
+                  <span class="text-lg font-bold text-red-400">70%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-red-500 to-orange-500" style="width: 70%"></div>
+                </div>
+              </div>
+
+              <!-- MySQL Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-blue-300">MySQL</span>
+                  <span class="text-lg font-bold text-blue-300">75%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-blue-400 to-blue-600" style="width: 75%"></div>
+                </div>
+              </div>
+
+              <!-- Node.js Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-green-400">Node.js</span>
+                  <span class="text-lg font-bold text-green-400">60%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-green-500 to-green-600" style="width: 60%"></div>
+                </div>
+              </div>
+
+              <!-- Kotlin Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-purple-400">Kotlin</span>
+                  <span class="text-lg font-bold text-purple-400">70%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-purple-500 to-indigo-500" style="width: 70%"></div>
+                </div>
+              </div>
+
+              <!-- Laravel Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-red-400">Laravel</span>
+                  <span class="text-lg font-bold text-red-400">75%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-red-500 to-pink-500" style="width: 75%"></div>
+                </div>
+              </div>
+
+              <!-- Flutter Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-blue-400">Flutter</span>
+                  <span class="text-lg font-bold text-blue-400">35% (and still going 📈)</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-blue-400 to-cyan-400" style="width: 35%"></div>
+                </div>
+              </div>
+
+              <!-- Google Workspaces Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-yellow-400">Google Workspaces</span>
+                  <span class="text-lg font-bold text-yellow-400">90%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-yellow-500 to-orange-500" style="width: 90%"></div>
+                </div>
+              </div>
             </div>
           </div>
-          <div data-aos="fade-left" data-aos-delay="100" data-aos-duration="500">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#ff0000] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">Critical Thinking</span>
-              <span class="text-xl md:group-hover:text-[#ff0000] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">85%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#ff0000] transition-all h-2.5 rounded-full" style="width: 85%"></div>
-            </div>
-          </div>
-          <div data-aos="fade-left" data-aos-delay="100" data-aos-duration="500">
-            <!-- Progress Bar -->
-            <div class="flex group justify-between mb-1">
-              <span class="text-base md:group-hover:text-[#ff0000] md:group-hover:text-2xl font-bold transition-all duration-300 text-black">Adaptable</span>
-              <span class="text-xl md:group-hover:text-[#ff0000] md:group-hover:text-2xl md:text-lg transition-all duration-300 text-black">90%</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-2">
-              <div class="bg-[#ff0000] transition-all h-2.5 rounded-full" style="width: 90%"></div>
+          
+          <!-- Soft Skills Card -->
+          <div data-aos="fade-left" data-aos-delay="1000" class="skills-card p-8 w-full max-w-2xl">
+            <h2 class="text-3xl font-bold text-center mb-8 text-purple-400">
+              <i class="fas fa-users mr-3"></i>Soft Skills
+            </h2>
+            
+            <div class="space-y-6">
+              <!-- Teamwork Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-green-400">Teamwork</span>
+                  <span class="text-lg font-bold text-green-400">90%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-green-500 to-emerald-500" style="width: 90%"></div>
+                </div>
+              </div>
+
+              <!-- Public Speaking Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-blue-400">Public Speaking</span>
+                  <span class="text-lg font-bold text-blue-400">85%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-blue-500 to-indigo-500" style="width: 85%"></div>
+                </div>
+              </div>
+
+              <!-- Time Management Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-purple-400">Time Management</span>
+                  <span class="text-lg font-bold text-purple-400">80%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-purple-500 to-pink-500" style="width: 80%"></div>
+                </div>
+              </div>
+
+              <!-- Critical Thinking Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-yellow-400">Critical Thinking</span>
+                  <span class="text-lg font-bold text-yellow-400">85%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-yellow-500 to-orange-500" style="width: 85%"></div>
+                </div>
+              </div>
+
+              <!-- Adaptable Progress -->
+              <div class="progress-item">
+                <div class="flex justify-between mb-2">
+                  <span class="text-lg font-semibold text-cyan-400">Adaptable</span>
+                  <span class="text-lg font-bold text-cyan-400">90%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill bg-gradient-to-r from-cyan-500 to-blue-500" style="width: 90%"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <footer data-aos="fade-down" data-aos-delay="400" class="font-JetBrains bg-white py-12 border-t border-gray-200">
+    <!-- Enhanced Footer -->
+    <footer data-aos="fade-down" data-aos-delay="500" class="relative z-10 py-16 mt-20">
       <div class="container mx-auto px-6">
-        <div class="flex justify-center space-x-6 mb-6">
-          <div data-aos="zoom-in" data-aos-delay="700">
-            <a href="https://www.github.com/LuthfiAditya01" class="text-gray-600 hover:text-sky-300 transition-all duration-300">
-              <i class="fab fa-github text-2xl hover:text-4xl transition-all duration-300"></i>
+        <!-- Social Links -->
+        <div class="flex justify-center space-x-8 mb-8">
+          <div data-aos="zoom-in" data-aos-delay="1400">
+            <a href="https://www.github.com/LuthfiAditya01" class="social-icon group">
+              <i class="fab fa-github text-2xl text-slate-300 group-hover:text-white transition-colors duration-300"></i>
             </a>
           </div>
-          <div data-aos="zoom-in" data-aos-delay="700">
-            <a href="https://www.linkedin.com/in/luthfi-aditya-191370242/" class="text-gray-600 hover:text-sky-500 transition-all duration-300">
-              <i class="fab fa-linkedin text-2xl hover:text-4xl transition-all duration-300"></i>
+          <div data-aos="zoom-in" data-aos-delay="1600">
+            <a href="https://www.linkedin.com/in/luthfi-aditya-191370242/" class="social-icon group">
+              <i class="fab fa-linkedin text-2xl text-slate-300 group-hover:text-blue-400 transition-colors duration-300"></i>
             </a>
           </div>
-          <div data-aos="zoom-in" data-aos-delay="700">
-            <a href="https://www.instagram.com/aditeverything_" class="text-gray-600 hover:text-sky-500 transition-all duration-300">
-              <i class="fab fa-instagram text-2xl hover:text-4xl transition-all duration-300"></i>
+          <div data-aos="zoom-in" data-aos-delay="1800">
+            <a href="https://www.instagram.com/aditeverything_" class="social-icon group">
+              <i class="fab fa-instagram text-2xl text-slate-300 group-hover:text-pink-400 transition-colors duration-300"></i>
             </a>
           </div>
         </div>
-        <p class="text-center text-gray-600">&copy; 2025 Luthfi Aditya. All Rights Reserved.</p>
+        
+        <!-- Copyright -->
+        <div class="text-center">
+          <p class="text-slate-400 text-lg">&copy; 2025 <span class="font-bold text-blue-400">Luthfi Aditya</span>. All Rights Reserved.</p>
+          <p class="text-slate-500 text-sm mt-2">Made with <span class="text-red-400">❤️</span> and lots of <span class="text-yellow-400">☕</span></p>
+        </div>
       </div>
     </footer>
   </body>
+  
   <script>
     AOS.init({
-      duration: 800,
-      once: true,
-      offset: 120,
-      easing: 'ease-out-quad',
-      useClassNames: true,
-      disableMutationObserver: true,
-      mirror: false,
+      duration: 1000,
+      once: false,
+      offset: 100,
+      easing: 'ease-out-cubic',
+      delay: 0,
+      mirror: false
     });
+
+    // Add smooth scrolling behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+
+    // Add intersection observer for better performance
+    if ('IntersectionObserver' in window) {
+      const progressBars = document.querySelectorAll('.progress-fill');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.width = entry.target.getAttribute('data-width') || entry.target.style.width;
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '50px'
+      });
+
+      progressBars.forEach(bar => observer.observe(bar));
+    }
   </script>
 </html>
