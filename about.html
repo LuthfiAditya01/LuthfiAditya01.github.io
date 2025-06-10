@@ -303,6 +303,166 @@
         box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
         border-color: rgba(56, 189, 248, 0.5);
       }
+
+      /* Skill Modal Styles */
+      .skill-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .skill-modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-content {
+        background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(51, 65, 85, 0.95));
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 2rem;
+        max-width: 500px;
+        width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
+        transform: scale(0.8) translateY(20px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        position: relative;
+      }
+
+      .skill-modal.active .modal-content {
+        transform: scale(1) translateY(0);
+      }
+
+      .modal-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent, rgba(56, 189, 248, 0.1), transparent);
+        border-radius: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .modal-content:hover::before {
+        opacity: 1;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .close-modal:hover {
+        background: rgba(239, 68, 68, 0.2);
+        border-color: rgba(239, 68, 68, 0.5);
+        transform: scale(1.1);
+      }
+
+      .modal-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .modal-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-align: center;
+        background: linear-gradient(135deg, #60a5fa, #34d399, #a78bfa);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .skill-level {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        gap: 1rem;
+      }
+
+      .level-bar {
+        flex: 1;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .level-fill {
+        height: 100%;
+        border-radius: 10px;
+        transition: width 0.8s ease;
+      }
+
+      .skill-details {
+        text-align: left;
+        line-height: 1.6;
+      }
+
+      .skill-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+      }
+
+      .skill-list li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .skill-list li:last-child {
+        border-bottom: none;
+      }
+
+      .progress-item {
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border-radius: 8px;
+        padding: 1rem;
+        margin: -1rem;
+      }
+
+      .progress-item:hover {
+        transform: translateX(10px);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 8px 25px rgba(56, 189, 248, 0.15);
+      }
     </style>
   </head>
   
@@ -417,7 +577,7 @@
             
             <div class="space-y-6">
               <!-- HTML Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="html">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-orange-400">HTML</span>
                   <span class="text-lg font-bold text-orange-400">90%</span>
@@ -428,7 +588,7 @@
               </div>
 
               <!-- CSS3 Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="css">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-blue-400">CSS3</span>
                   <span class="text-lg font-bold text-blue-400">75%</span>
@@ -439,7 +599,7 @@
               </div>
 
               <!-- Tailwind CSS Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="tailwind">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-cyan-400">Tailwind CSS</span>
                   <span class="text-lg font-bold text-cyan-400">80%</span>
@@ -450,7 +610,7 @@
               </div>
 
               <!-- Git Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="git">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-red-400">Git</span>
                   <span class="text-lg font-bold text-red-400">70%</span>
@@ -461,7 +621,7 @@
               </div>
 
               <!-- MySQL Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="mysql">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-blue-300">MySQL</span>
                   <span class="text-lg font-bold text-blue-300">75%</span>
@@ -472,7 +632,7 @@
               </div>
 
               <!-- Node.js Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="nodejs">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-green-400">Node.js</span>
                   <span class="text-lg font-bold text-green-400">60%</span>
@@ -483,7 +643,7 @@
               </div>
 
               <!-- Kotlin Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="kotlin">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-purple-400">Kotlin</span>
                   <span class="text-lg font-bold text-purple-400">70%</span>
@@ -494,7 +654,7 @@
               </div>
 
               <!-- Laravel Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="laravel">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-red-400">Laravel</span>
                   <span class="text-lg font-bold text-red-400">75%</span>
@@ -505,7 +665,7 @@
               </div>
 
               <!-- Flutter Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="flutter">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-blue-400">Flutter</span>
                   <span class="text-lg font-bold text-blue-400">35% (and still going 📈)</span>
@@ -516,7 +676,7 @@
               </div>
 
               <!-- Google Workspaces Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="google-workspace">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-yellow-400">Google Workspaces</span>
                   <span class="text-lg font-bold text-yellow-400">90%</span>
@@ -536,7 +696,7 @@
             
             <div class="space-y-6">
               <!-- Teamwork Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="teamwork">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-green-400">Teamwork</span>
                   <span class="text-lg font-bold text-green-400">90%</span>
@@ -547,7 +707,7 @@
               </div>
 
               <!-- Public Speaking Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="public-speaking">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-blue-400">Public Speaking</span>
                   <span class="text-lg font-bold text-blue-400">85%</span>
@@ -558,7 +718,7 @@
               </div>
 
               <!-- Time Management Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="time-management">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-purple-400">Time Management</span>
                   <span class="text-lg font-bold text-purple-400">80%</span>
@@ -569,7 +729,7 @@
               </div>
 
               <!-- Critical Thinking Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="critical-thinking">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-yellow-400">Critical Thinking</span>
                   <span class="text-lg font-bold text-yellow-400">85%</span>
@@ -580,7 +740,7 @@
               </div>
 
               <!-- Adaptable Progress -->
-              <div class="progress-item">
+              <div class="progress-item" data-skill="adaptable">
                 <div class="flex justify-between mb-2">
                   <span class="text-lg font-semibold text-cyan-400">Adaptable</span>
                   <span class="text-lg font-bold text-cyan-400">90%</span>
@@ -624,6 +784,35 @@
         </div>
       </div>
     </footer>
+
+    <!-- Skill Modal -->
+    <div id="skillModal" class="skill-modal">
+      <div class="modal-content">
+        <div class="close-modal" onclick="closeSkillModal()">
+          <i class="fas fa-times text-white"></i>
+        </div>
+        
+        <div class="modal-icon" id="modalIcon">
+          <!-- Icon will be inserted by JavaScript -->
+        </div>
+        
+        <h2 class="modal-title" id="modalTitle">
+          <!-- Title will be inserted by JavaScript -->
+        </h2>
+        
+        <div class="skill-level">
+          <span class="text-lg font-semibold text-white" id="modalSkillName">Skill Level:</span>
+          <div class="level-bar">
+            <div class="level-fill" id="modalProgressFill"></div>
+          </div>
+          <span class="text-lg font-bold text-white" id="modalPercentage">0%</span>
+        </div>
+        
+        <div class="skill-details" id="modalDetails">
+          <!-- Details will be inserted by JavaScript -->
+        </div>
+      </div>
+    </div>
   </body>
   
   <script>
@@ -656,5 +845,353 @@
 
       progressBars.forEach(bar => observer.observe(bar));
     }
+
+    // Skill Data Object
+    const skillsData = {
+      // Hard Skills
+      html: {
+        title: "HTML",
+        icon: "🌐",
+        percentage: 90,
+        gradient: "from-orange-500 to-red-500",
+        description: "Bahasa markup standar untuk membuat struktur halaman web.",
+        details: [
+          "✅ Semantic HTML5 elements (article, section, nav, etc.)",
+          "✅ Form handling dan validasi",
+          "✅ Accessibility (ARIA labels, semantic structure)",
+          "✅ Meta tags dan SEO optimization",
+          "✅ Responsive images dan media queries",
+          "✅ Web Components dan Custom Elements",
+          "🔄 Advanced Canvas API (sedang dipelajari)"
+        ],
+        experience: "3+ tahun mengembangkan struktur web dengan HTML5 modern. Berpengalaman dalam membangun website responsive dan accessible."
+      },
+      css: {
+        title: "CSS3",
+        icon: "🎨",
+        percentage: 75,
+        gradient: "from-blue-500 to-indigo-500",
+        description: "Stylesheet language untuk mendesain tampilan dan layout website.",
+        details: [
+          "✅ CSS Grid dan Flexbox untuk layout modern",
+          "✅ CSS Animations dan Transitions",
+          "✅ Responsive Design dengan Media Queries",
+          "✅ CSS Variables (Custom Properties)",
+          "✅ SASS/SCSS preprocessor",
+          "🔄 CSS-in-JS solutions (styled-components)",
+          "🔄 Advanced CSS Houdini APIs"
+        ],
+        experience: "Mampu membuat design system yang konsisten dan animasi yang smooth. Fokus pada performance dan cross-browser compatibility."
+      },
+      tailwind: {
+        title: "Tailwind CSS",
+        icon: "🎭",
+        percentage: 80,
+        gradient: "from-cyan-500 to-blue-500",
+        description: "Utility-first CSS framework untuk rapid UI development.",
+        details: [
+          "✅ Utility classes dan responsive modifiers",
+          "✅ Custom design system dengan tailwind.config.js",
+          "✅ Component composition patterns",
+          "✅ Dark mode implementation",
+          "✅ Plugin ecosystem (forms, typography, etc.)",
+          "✅ JIT (Just-In-Time) compilation",
+          "🔄 Headless UI integration"
+        ],
+        experience: "Menggunakan Tailwind untuk membangun UI yang konsisten dan maintainable. Ahli dalam optimisasi bundle size dan performance."
+      },
+      git: {
+        title: "Git",
+        icon: "📚",
+        percentage: 70,
+        gradient: "from-red-500 to-orange-500",
+        description: "Version control system untuk collaborative development.",
+        details: [
+          "✅ Basic Git commands (add, commit, push, pull)",
+          "✅ Branching strategies (Git Flow, GitHub Flow)",
+          "✅ Merge vs Rebase workflows",
+          "✅ Conflict resolution",
+          "✅ GitHub/GitLab collaboration",
+          "🔄 Advanced Git hooks dan automation",
+          "🔄 Git submodules dan subtrees"
+        ],
+        experience: "Menggunakan Git untuk semua project development. Berpengalaman dalam team collaboration dan code review process."
+      },
+      mysql: {
+        title: "MySQL",
+        icon: "🗄️",
+        percentage: 75,
+        gradient: "from-blue-400 to-blue-600",
+        description: "Relational database management system yang populer.",
+        details: [
+          "✅ Database design dan normalization",
+          "✅ Complex SQL queries (JOIN, subqueries, etc.)",
+          "✅ Indexing untuk performance optimization",
+          "✅ Stored procedures dan triggers",
+          "✅ Database backup dan restore",
+          "🔄 MySQL clustering dan replication",
+          "🔄 Performance tuning dan monitoring"
+        ],
+        experience: "Mengelola database untuk aplikasi web skala menengah. Fokus pada optimisasi query dan data integrity."
+      },
+      nodejs: {
+        title: "Node.js",
+        icon: "🚀",
+        percentage: 60,
+        gradient: "from-green-500 to-green-600",
+        description: "JavaScript runtime untuk server-side development.",
+        details: [
+          "✅ Express.js framework",
+          "✅ RESTful API development",
+          "✅ Middleware dan routing",
+          "✅ File system operations",
+          "✅ NPM package management",
+          "🔄 GraphQL dengan Apollo Server",
+          "🔄 Microservices architecture"
+        ],
+        experience: "Membangun backend APIs dan server-side applications. Sedang memperdalam async programming dan microservices pattern."
+      },
+      kotlin: {
+        title: "Kotlin",
+        icon: "📱",
+        percentage: 70,
+        gradient: "from-purple-500 to-indigo-500",
+        description: "Modern programming language untuk Android development.",
+        details: [
+          "✅ Android app development",
+          "✅ Kotlin syntax dan idioms",
+          "✅ Coroutines untuk async programming",
+          "✅ Android Jetpack components",
+          "✅ Room database integration",
+          "🔄 Kotlin Multiplatform Mobile (KMM)",
+          "🔄 Jetpack Compose UI toolkit"
+        ],
+        experience: "Mengembangkan aplikasi Android native dengan Kotlin. Berpengalaman dalam MVVM architecture dan modern Android development."
+      },
+      laravel: {
+        title: "Laravel",
+        icon: "⚡",
+        percentage: 75,
+        gradient: "from-red-500 to-pink-500",
+        description: "PHP framework yang elegant untuk web application development.",
+        details: [
+          "✅ MVC architecture pattern",
+          "✅ Eloquent ORM dan database migrations",
+          "✅ Authentication dan authorization",
+          "✅ API development dengan Laravel Sanctum",
+          "✅ Blade templating engine",
+          "✅ Artisan command line interface",
+          "🔄 Laravel Livewire untuk reactive components"
+        ],
+        experience: "Membangun web applications dengan Laravel. Fokus pada clean code architecture dan security best practices."
+      },
+      flutter: {
+        title: "Flutter",
+        icon: "💙",
+        percentage: 35,
+        gradient: "from-blue-400 to-cyan-400",
+        description: "Cross-platform mobile development framework oleh Google.",
+        details: [
+          "✅ Dart programming language basics",
+          "✅ Widget tree dan state management",
+          "✅ Material Design implementation",
+          "✅ Basic navigation dan routing",
+          "🔄 Advanced state management (BLoC, Provider)",
+          "🔄 Platform channels untuk native integration",
+          "🔄 Flutter Web dan Desktop development"
+        ],
+        experience: "Sedang aktif mempelajari Flutter untuk cross-platform development. Target mencapai proficiency dalam 6 bulan ke depan."
+      },
+      "google-workspace": {
+        title: "Google Workspace",
+        icon: "📊",
+        percentage: 90,
+        gradient: "from-yellow-500 to-orange-500",
+        description: "Suite produktivitas cloud-based oleh Google.",
+        details: [
+          "✅ Google Sheets advanced formulas dan scripting",
+          "✅ Google Docs collaboration dan formatting",
+          "✅ Google Drive organization dan sharing",
+          "✅ Gmail professional communication",
+          "✅ Google Calendar scheduling dan management",
+          "✅ Google Forms untuk data collection",
+          "✅ Google Apps Script automation"
+        ],
+        experience: "Power user Google Workspace untuk produktivitas dan collaboration. Membuat automation scripts untuk workflow optimization."
+      },
+
+      // Soft Skills
+      teamwork: {
+        title: "Teamwork",
+        icon: "🤝",
+        percentage: 90,
+        gradient: "from-green-500 to-emerald-500",
+        description: "Kemampuan bekerja sama secara efektif dalam tim.",
+        details: [
+          "✅ Active listening dan empati dalam komunikasi",
+          "✅ Conflict resolution dan problem solving bersama",
+          "✅ Knowledge sharing dan mentoring junior",
+          "✅ Cross-functional collaboration",
+          "✅ Adaptasi dengan berbagai personality types",
+          "✅ Contributing dalam brainstorming sessions",
+          "✅ Supporting team goals dan collective success"
+        ],
+        experience: "Berpengalaman memimpin dan berkontribusi dalam berbagai team projects. Selalu fokus pada sinergi dan hasil bersama."
+      },
+      "public-speaking": {
+        title: "Public Speaking",
+        icon: "🎤",
+        percentage: 85,
+        gradient: "from-blue-500 to-indigo-500",
+        description: "Kemampuan berkomunikasi efektif di depan audiens.",
+        details: [
+          "✅ Presentasi project kepada stakeholders",
+          "✅ Technical demos dan product showcases",
+          "✅ Workshop facilitation dan training delivery",
+          "✅ Impromptu speaking dan Q&A handling",
+          "✅ Storytelling untuk engaging presentations",
+          "🔄 Large audience speaking (100+ people)",
+          "🔄 International conference speaking"
+        ],
+        experience: "Sering mempresentasikan project results dan technical solutions. Comfortable speaking di berbagai setting formal dan informal."
+      },
+      "time-management": {
+        title: "Time Management",
+        icon: "⏰",
+        percentage: 80,
+        gradient: "from-purple-500 to-pink-500",
+        description: "Kemampuan mengatur waktu dan prioritas secara efisien.",
+        details: [
+          "✅ Task prioritization dengan Eisenhower Matrix",
+          "✅ Project timeline planning dan milestone tracking",
+          "✅ Pomodoro Technique untuk deep work sessions",
+          "✅ Calendar blocking untuk focused work time",
+          "✅ Delegation dan task distribution",
+          "🔄 Advanced productivity methodologies (GTD, PARA)",
+          "🔄 Cross-timezone collaboration optimization"
+        ],
+        experience: "Menggunakan various tools dan methodologies untuk optimal productivity. Consistently meeting deadlines dan project milestones."
+      },
+      "critical-thinking": {
+        title: "Critical Thinking",
+        icon: "🧠",
+        percentage: 85,
+        gradient: "from-yellow-500 to-orange-500",
+        description: "Kemampuan menganalisis masalah dan membuat keputusan logis.",
+        details: [
+          "✅ Problem decomposition dan root cause analysis",
+          "✅ Data-driven decision making",
+          "✅ Risk assessment dan mitigation planning",
+          "✅ Alternative solution evaluation",
+          "✅ Logical reasoning dan evidence-based arguments",
+          "✅ Systems thinking untuk complex problems",
+          "🔄 Advanced analytical frameworks (SWOT, 5 Whys)"
+        ],
+        experience: "Menerapkan critical thinking dalam troubleshooting technical issues dan strategic planning. Focus pada evidence-based solutions."
+      },
+      adaptable: {
+        title: "Adaptable",
+        icon: "🔄",
+        percentage: 90,
+        gradient: "from-cyan-500 to-blue-500",
+        description: "Kemampuan beradaptasi dengan perubahan dan situasi baru.",
+        details: [
+          "✅ Quick learning new technologies dan frameworks",
+          "✅ Flexible approach terhadap changing requirements",
+          "✅ Cultural adaptability dalam diverse teams",
+          "✅ Embracing feedback dan continuous improvement",
+          "✅ Resilience dalam menghadapi challenges",
+          "✅ Comfort zone expansion secara konsisten",
+          "✅ Change management dan transition leadership"
+        ],
+        experience: "Thriving dalam dynamic environments dan rapid technology changes. Selalu excited untuk explore new domains dan methodologies."
+      }
+    };
+
+    // Modal Functions
+    function openSkillModal(skillKey) {
+      const skill = skillsData[skillKey];
+      if (!skill) return;
+
+      const modal = document.getElementById('skillModal');
+      const modalIcon = document.getElementById('modalIcon');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalSkillName = document.getElementById('modalSkillName');
+      const modalProgressFill = document.getElementById('modalProgressFill');
+      const modalPercentage = document.getElementById('modalPercentage');
+      const modalDetails = document.getElementById('modalDetails');
+
+      // Set modal content
+      modalIcon.textContent = skill.icon;
+      modalTitle.textContent = skill.title;
+      modalSkillName.textContent = `${skill.title} Level:`;
+      modalProgressFill.className = `level-fill bg-gradient-to-r ${skill.gradient}`;
+      modalProgressFill.style.width = '0%';
+      modalPercentage.textContent = `${skill.percentage}%`;
+
+      // Set detailed content
+      modalDetails.innerHTML = `
+        <p class="text-slate-300 mb-4 text-lg">${skill.description}</p>
+        
+        <div class="mb-6">
+          <h3 class="text-xl font-bold text-blue-400 mb-3">
+            <i class="fas fa-list-check mr-2"></i>Kemampuan & Pengalaman:
+          </h3>
+          <ul class="skill-list">
+            ${skill.details.map(detail => `<li><span class="text-blue-400">${detail.substring(0, 2)}</span> ${detail.substring(3)}</li>`).join('')}
+          </ul>
+        </div>
+        
+        <div class="bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
+          <h3 class="text-lg font-bold text-green-400 mb-2">
+            <i class="fas fa-star mr-2"></i>Pengalaman Praktis:
+          </h3>
+          <p class="text-slate-300 leading-relaxed">${skill.experience}</p>
+        </div>
+      `;
+
+      // Show modal with animation
+      modal.classList.add('active');
+      
+      // Animate progress bar
+      setTimeout(() => {
+        modalProgressFill.style.width = `${skill.percentage}%`;
+      }, 300);
+
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSkillModal() {
+      const modal = document.getElementById('skillModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Add click event listeners to all progress items
+    document.addEventListener('DOMContentLoaded', function() {
+      const progressItems = document.querySelectorAll('.progress-item[data-skill]');
+      
+      progressItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const skillKey = this.getAttribute('data-skill');
+          openSkillModal(skillKey);
+        });
+      });
+
+      // Close modal when clicking outside
+      document.getElementById('skillModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeSkillModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeSkillModal();
+        }
+      });
+    });
   </script>
 </html>
